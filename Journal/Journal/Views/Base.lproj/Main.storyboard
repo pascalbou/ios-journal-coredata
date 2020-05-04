@@ -15,15 +15,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="icJ-Zd-4MT">
-                                <rect key="frame" x="0.0" y="44" width="414" height="0.0"/>
-                                <items>
-                                    <navigationItem title="Create Entry" id="2b7-xZ-stg">
-                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Tww-hl-yrJ"/>
-                                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="ShE-2i-1Jq"/>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="C3N-fZ-Par">
                                 <rect key="frame" x="20" y="103" width="374" height="250.5"/>
                                 <subviews>
@@ -65,21 +56,33 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="C3N-fZ-Par" firstAttribute="top" secondItem="icJ-Zd-4MT" secondAttribute="bottom" constant="59" id="7jy-VP-oMe"/>
-                            <constraint firstItem="icJ-Zd-4MT" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="top" id="93l-Ef-uOn"/>
-                            <constraint firstItem="icJ-Zd-4MT" firstAttribute="centerX" secondItem="C3N-fZ-Par" secondAttribute="centerX" id="d3a-uQ-CKo"/>
+                            <constraint firstItem="C3N-fZ-Par" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="P19-y6-rzs"/>
+                            <constraint firstItem="C3N-fZ-Par" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="15" id="Zu0-vd-Fp4"/>
                             <constraint firstItem="C3N-fZ-Par" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="lhm-pP-Zwz"/>
-                            <constraint firstItem="icJ-Zd-4MT" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="nD7-jM-OnM"/>
-                            <constraint firstAttribute="trailing" secondItem="icJ-Zd-4MT" secondAttribute="trailing" id="vmV-lO-TJP"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="C3N-fZ-Par" secondAttribute="bottom" constant="508.5" id="xFG-yl-1iH"/>
-                            <constraint firstItem="icJ-Zd-4MT" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="ztg-ap-a4Y"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Create Entry" id="apx-WC-x5F">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="vRx-cx-kUR">
+                            <connections>
+                                <action selector="cancel:" destination="BYZ-38-t0r" id="wFO-YD-q0U"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="h4c-74-sGs">
+                            <connections>
+                                <action selector="save:" destination="BYZ-38-t0r" id="gPr-MM-XT8"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="bodyTextView" destination="MH5-4n-U35" id="0W2-pB-sDh"/>
+                        <outlet property="titleTextField" destination="UlK-Ec-dwk" id="hSa-8y-P1o"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2811.594202898551" y="-160.04464285714286"/>
+            <point key="canvasLocation" x="3721.739130434783" y="-160.04464285714286"/>
         </scene>
         <!--Journal-->
         <scene sceneID="03X-kA-n96">
@@ -142,7 +145,7 @@
                     <navigationItem key="navigationItem" title="Journal" id="w3H-Jv-IhA">
                         <barButtonItem key="rightBarButtonItem" image="plus.square" catalog="system" id="gPs-QX-usl">
                             <connections>
-                                <segue destination="BYZ-38-t0r" kind="presentation" modalPresentationStyle="fullScreen" id="ukM-FX-Azr"/>
+                                <segue destination="0OB-bv-FNu" kind="presentation" modalPresentationStyle="fullScreen" id="ukM-FX-Azr"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -168,6 +171,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rAN-Te-QuD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="998.55072463768124" y="112.5"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="I5x-Lj-Sue">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0OB-bv-FNu" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="wiF-cD-1uC">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="8o7-jz-c9t"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="E7g-dB-ov6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2811.594202898551" y="-160.04464285714286"/>
         </scene>
     </scenes>
     <resources>
