@@ -15,7 +15,8 @@ class CreateEntryViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        titleTextField.becomeFirstResponder()
     }
 
     @IBAction func cancel(_ sender: UIBarButtonItem) {
