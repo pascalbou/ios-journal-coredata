@@ -66,8 +66,7 @@
 		3FAAC49A24609FB600CEC630 /* Journal */ = {
 			isa = PBXGroup;
 			children = (
-				3FAAC49B24609FB600CEC630 /* AppDelegate.swift */,
-				3FAAC49D24609FB600CEC630 /* SceneDelegate.swift */,
+				3FAAC4BA2460A0C500CEC630 /* App */,
 				3FAAC49F24609FB600CEC630 /* CreateEntryViewController.swift */,
 				3FAAC4A124609FB600CEC630 /* Main.storyboard */,
 				3FAAC4B12460A06800CEC630 /* EntryTableViewCell.swift */,
@@ -80,6 +79,15 @@
 				3FAAC4A924609FB800CEC630 /* Info.plist */,
 			);
 			path = Journal;
+			sourceTree = "<group>";
+		};
+		3FAAC4BA2460A0C500CEC630 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				3FAAC49B24609FB600CEC630 /* AppDelegate.swift */,
+				3FAAC49D24609FB600CEC630 /* SceneDelegate.swift */,
+			);
+			path = App;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
