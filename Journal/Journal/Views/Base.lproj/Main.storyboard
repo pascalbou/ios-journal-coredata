@@ -81,7 +81,7 @@
             </objects>
             <point key="canvasLocation" x="2811.594202898551" y="-160.04464285714286"/>
         </scene>
-        <!--Entries Table View Controller-->
+        <!--Journal-->
         <scene sceneID="03X-kA-n96">
             <objects>
                 <tableViewController id="hVj-iB-fIv" customClass="EntriesTableViewController" customModule="Journal" customModuleProvider="target" sceneMemberID="viewController">
@@ -90,13 +90,48 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="yuZ-iv-xfB" customClass="EntryTableViewCell" customModule="Journal" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="EntryCell" rowHeight="219" id="yuZ-iv-xfB" customClass="EntryTableViewCell" customModule="Journal" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="219"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yuZ-iv-xfB" id="3c5-ZN-4Pa">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="219"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="EQw-oY-OYA">
+                                            <rect key="frame" x="20" y="11" width="362.5" height="47.5"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="290" translatesAutoresizingMaskIntoConstraints="NO" id="pvt-ne-az0">
+                                                    <rect key="frame" x="0.0" y="0.0" width="362.5" height="24"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lIh-t2-5iF">
+                                                            <rect key="frame" x="0.0" y="0.0" width="42" height="24"/>
+                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lDP-f5-avy">
+                                                            <rect key="frame" x="332" y="0.0" width="30.5" height="24"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="bodyText" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Bx-r3-sRi">
+                                                    <rect key="frame" x="0.0" y="28" width="362.5" height="19.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="bodyTextLabel" destination="8Bx-r3-sRi" id="sdz-IW-cw0"/>
+                                    <outlet property="timestampLabel" destination="lDP-f5-avy" id="MXJ-vP-2sQ"/>
+                                    <outlet property="titleLabel" destination="lIh-t2-5iF" id="nL6-J7-8pM"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -104,8 +139,8 @@
                             <outlet property="delegate" destination="hVj-iB-fIv" id="eFn-OD-qQr"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="w3H-Jv-IhA">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="gPs-QX-usl">
+                    <navigationItem key="navigationItem" title="Journal" id="w3H-Jv-IhA">
+                        <barButtonItem key="rightBarButtonItem" image="plus.square" catalog="system" id="gPs-QX-usl">
                             <connections>
                                 <segue destination="BYZ-38-t0r" kind="presentation" modalPresentationStyle="fullScreen" id="ukM-FX-Azr"/>
                             </connections>
@@ -135,4 +170,7 @@
             <point key="canvasLocation" x="998.55072463768124" y="112.5"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="plus.square" catalog="system" width="64" height="56"/>
+    </resources>
 </document>
