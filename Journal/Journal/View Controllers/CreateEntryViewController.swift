@@ -28,7 +28,9 @@ class CreateEntryViewController: UIViewController {
         guard let title = titleTextField.text, !title.isEmpty else { return }
         
         let bodyText = bodyTextView.text
-        Entry(title: title, bodyText: bodyText)
+        let moodIndex = moodSegmentedControl.selectedSegmentIndex
+        let mood = Mood.allCases[moodIndex]
+        Entry(title: title, bodyText: bodyText, mood: mood)
         do {
             try CoreDataStack.shared.mainContext.save()
         } catch {
