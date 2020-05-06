@@ -154,7 +154,7 @@
                     <navigationItem key="navigationItem" title="Journal" id="w3H-Jv-IhA">
                         <barButtonItem key="rightBarButtonItem" image="plus.square" catalog="system" id="gPs-QX-usl">
                             <connections>
-                                <segue destination="0OB-bv-FNu" kind="presentation" modalPresentationStyle="fullScreen" id="ukM-FX-Azr"/>
+                                <segue destination="0OB-bv-FNu" kind="presentation" identifier="PresentCreateEntrySegue" modalPresentationStyle="fullScreen" id="ukM-FX-Azr"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
