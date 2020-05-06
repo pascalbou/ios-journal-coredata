@@ -11,6 +11,8 @@ import CoreData
 
 class EntriesTableViewController: UITableViewController {
     
+    var entryController = EntryController()
+    
     lazy var fetchedResultsController: NSFetchedResultsController<Entry> = {
         let fetchRequest: NSFetchRequest<Entry> = Entry.fetchRequest()
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "mood", ascending: true), NSSortDescriptor(key: "timestamp", ascending: true)]
@@ -59,13 +61,19 @@ class EntriesTableViewController: UITableViewController {
         if editingStyle == .delete {
             // Delete the row from the data source
             let entry = fetchedResultsController.object(at: indexPath)
-            CoreDataStack.shared.mainContext.delete(entry)
+            entryController.deleteEntryFromServer(entry: entry) { (result) in
+                guard let _ = try? result.get() else {
+                    return
+                }
+                
+                CoreDataStack.shared.mainContext.delete(entry)
 
-            do {
-                try CoreDataStack.shared.mainContext.save()
-            } catch {
-                CoreDataStack.shared.mainContext.reset()
-                NSLog("Error saving managed object context: \(error)")
+                do {
+                    try CoreDataStack.shared.mainContext.save()
+                } catch {
+                    CoreDataStack.shared.mainContext.reset()
+                    NSLog("Error saving managed object context: \(error)")
+                }
             }
         }
     }

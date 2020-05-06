@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3F94DB05246360D20003ADF5 /* EntryRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F94DB04246360D20003ADF5 /* EntryRepresentation.swift */; };
+		3F94DB07246363F10003ADF5 /* EntryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F94DB06246363F10003ADF5 /* EntryController.swift */; };
 		3F9A44C824632F5200DE346E /* EntryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9A44C724632F5200DE346E /* EntryDetailViewController.swift */; };
 		3FAAC49C24609FB600CEC630 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FAAC49B24609FB600CEC630 /* AppDelegate.swift */; };
 		3FAAC49E24609FB600CEC630 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FAAC49D24609FB600CEC630 /* SceneDelegate.swift */; };
@@ -24,6 +25,7 @@
 
 /* Begin PBXFileReference section */
 		3F94DB04246360D20003ADF5 /* EntryRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryRepresentation.swift; sourceTree = "<group>"; };
+		3F94DB06246363F10003ADF5 /* EntryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryController.swift; sourceTree = "<group>"; };
 		3F9A44C62463258A00DE346E /* Journal 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Journal 2.xcdatamodel"; sourceTree = "<group>"; };
 		3F9A44C724632F5200DE346E /* EntryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryDetailViewController.swift; sourceTree = "<group>"; };
 		3FAAC49824609FB600CEC630 /* Journal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Journal.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -73,6 +75,7 @@
 			children = (
 				3FAAC4BA2460A0C500CEC630 /* App */,
 				3FAAC4BB2460A71200CEC630 /* Models */,
+				3F94DB06246363F10003ADF5 /* EntryController.swift */,
 				3FAAC4BD2460A73600CEC630 /* View Controllers */,
 				3FAAC4BE2460A74A00CEC630 /* Views */,
 				3FAAC4A424609FB800CEC630 /* Assets.xcassets */,
@@ -201,6 +204,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3FAAC4B02460A04B00CEC630 /* EntriesTableViewController.swift in Sources */,
+				3F94DB07246363F10003ADF5 /* EntryController.swift in Sources */,
 				3F94DB05246360D20003ADF5 /* EntryRepresentation.swift in Sources */,
 				3FAAC4B22460A06800CEC630 /* EntryTableViewCell.swift in Sources */,
 				3FAAC4A024609FB600CEC630 /* CreateEntryViewController.swift in Sources */,

@@ -16,6 +16,7 @@ class EntryDetailViewController: UIViewController {
     
     var entry: Entry?
     var wasEdited = false
+    var entryController: EntryController?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -71,6 +72,11 @@ class EntryDetailViewController: UIViewController {
             entry?.setValue(title, forKey: "title")
             entry?.setValue(bodyText, forKey: "bodyText")
             entry?.setValue(mood, forKey: "mood")
+            
+            if let entry = entry {
+                entryController?.sendEntryToServer(entry: entry)
+            }
+            
             
             do {
                 try CoreDataStack.shared.mainContext.save()
